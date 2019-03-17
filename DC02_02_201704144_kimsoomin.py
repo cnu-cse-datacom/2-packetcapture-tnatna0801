@@ -35,7 +35,7 @@ def parsing_ip_header(data):
     flags = ( ip_Fragment_Offset >> 13 )& 7
 
     print("======ip header======")
-    print("ip_version:", (ip_version & 240) >> 4) # because vesion 4bit
+    print("ip_version:", (ip_version & 240) >> 4) # because version 4bit
     print("ip_Length", (ip_version & 15))
     print("differentiated_service_codepoint:",(ip_service & 252) >> 2)
     print("explicit_congestion_notification:", (ip_service & 3)) 
@@ -78,7 +78,7 @@ def parsing_tcp_header(data):
     print("flags:", tcp_flags & 255)
     print(">>>reserved:", (tcp_flags >> 8) & 15)
     print(">>>nonce:", (tcp_flags >> 7)  & 1)
-    print(">>>cwr:", (tcp_flags >> 6) & 1) #ECN????
+    print(">>>cwr:", (tcp_flags >> 6) & 1) 
     print(">>>urgent:", (tcp_flags >> 5) & 1)
     print(">>>ack:", (tcp_flags >> 4) & 1)
     print(">>>push:", (tcp_flags >> 3) & 1)
